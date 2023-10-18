@@ -10,7 +10,6 @@
     ?>
         <div>
             <h2>Bem-vindo ao seu marketplace</h2>
-            <?php var_dump($_SESSION["userid"]); ?>
             <p><a href="profile.php">ACESSE SEU PERFIL</a></p>
             </form>
         </div>

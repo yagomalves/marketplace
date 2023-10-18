@@ -1,3 +1,7 @@
+Yago: atualmente trabalhando na página adSolo.php que consiste em exibir os anúncios individualmente, tanto para atualizar, quanto para excluir.
+
+--------------------------------------------------------------------------
+
 Banco de dados: ooplogin
 
 users:
@@ -30,3 +34,4 @@ pwdreset:
 -pwdResetToken LONGTEXT
 -pwdResetExpires TEXT
 -pwdResetId INT AUTO_INCREMENT
+
