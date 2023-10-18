@@ -1,3 +1,4 @@
+Kauã: Trabalhando na UI (Parte interativa) das páginas já adicionadas.
 Yago: atualmente trabalhando na página adSolo.php que consiste em exibir os anúncios individualmente, tanto para atualizar, quanto para excluir.
 
 --------------------------------------------------------------------------
