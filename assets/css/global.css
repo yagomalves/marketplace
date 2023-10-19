@@ -72,7 +72,19 @@ footer{
     background: #fff;
 }
 
-.mainFormFields button{
+/*.mainFormFields button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    width: 57%;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #919191;
+    padding: 3px;
+    border-radius: 3px;
+} */
+
+button{
     display: flex;
     flex-direction: row;
     margin-top: 3px;
