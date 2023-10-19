@@ -26,5 +26,4 @@ $adsInfo = new MyAdsInfoView();
             </ul>
         </div>
     </main>
-
 </body>

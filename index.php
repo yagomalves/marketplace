@@ -9,7 +9,6 @@ include_once "header.php";
         ?>
             <div class='welcomeIndex'>
                 <h2>Bem-vindo ao seu marketplace</h2>
-                <p><a href="profile.php">Acesse seu perfil</a></p>
                 </form>
             </div>
         <?php
@@ -30,16 +29,15 @@ include_once "header.php";
                     </form>
                 </div>
             </div>
-            <br>
+            
             <hr>
-            <br>
 
             <div class='mainForm'>
                 <div class="mainFormFields">
                     <h2>Entrar</h2>
                     <form action="includes/login.inc.php" method="post">
                         <input type="text" name="email" placeholder="Username">
-                        <input type="password" name="password" placeholder="Password"> 
+                        <input type="password" name="password" placeholder="Password">
                         <button type="submit" name="submit">Login</button>
                     </form>
                     <p><a href="resetpassword.php">Esqueceu a senha?</a></p>

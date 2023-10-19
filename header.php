@@ -29,6 +29,7 @@ session_start();
                 <p><a href="myAds.php">Meus anúncios</a></p>
                 <p><a href="./includes/logout.inc.php">LOGOUT</a></p>
 
+
             <?php
             } else {
             ?>
@@ -39,3 +40,4 @@ session_start();
         </ul>
 
     </nav>
+    <hr>

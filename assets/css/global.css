@@ -5,8 +5,8 @@
     font-family: 'Arial', sans-serif;
 }
 
-nav {
-    background-color: #ccc;
+nav{
+    padding: 10px;
 }
 
 section {
@@ -27,6 +27,12 @@ footer{
 a{
     text-decoration: dashed;
     text-transform: capitalize;
+    color: steelblue;
+    transition: 1s;
+}
+
+a:hover{
+    color: purple;
 }
 
 input{
@@ -45,8 +51,8 @@ button{
     border-radius: 3px;
 }
 
-.welcomeIndex p{
-    margin-top: 3%;
+.welcomeIndex{
+    padding: 10px;
 }
 
 .mainHeader{
