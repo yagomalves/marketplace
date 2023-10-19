@@ -1,0 +1,13 @@
+.myAds{
+    margin-left: 2rem;
+}
+
+.myAds h2{
+    margin: 5px 0 5px 0;
+}
+
+.adTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
