@@ -7,13 +7,11 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auth</title>
+    <title>Classificados</title>
     <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/ads.css">
 </head>
-
-
 <body>
-
     <nav class="mainHeader">
         <div>
             <ul class="homeLink">
