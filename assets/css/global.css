@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+nav {
+    background-color: #ccc;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    background-color: white; /* Cor de fundo do footer */
+    
+}
+
+.welcomeIndex p{
+    margin-top: 3%;
+}
+
+.mainHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homeLink{
+    display: flex;
+    margin-left: 15px;
+}
+
+.mainLinks{
+    display: flex;
+}
+
+.mainLinks p{
+    padding: 5px 10px 5px 10px;
+}
+
+
+.adImage {
+    width: 20%;
+    height: 20%;
+}
+.adPage {
+    width: 60%;
+    align-items: center;
+}
+
+.mainForm{
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mainFormFields{
+    width: 300px;
+    background: #fff;
+}
+
+.mainFormFields button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    width: 57%;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #919191;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.mainFormFields input{
+    margin-top: 3px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+a{
+    text-decoration: dashed;
+    text-transform: capitalize;
+}
