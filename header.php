@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/ads.css">
 </head>
+
 <body>
     <nav class="mainHeader">
         <div>

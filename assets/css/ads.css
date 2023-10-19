@@ -2,11 +2,11 @@
     margin-left: 2rem;
 }
 
-.myAds h2{
+.title h2{
     margin: 5px 0 5px 0;
 }
 
-.adTitle{
+.title{
     display: flex;
     justify-content: center;
     align-items: center;

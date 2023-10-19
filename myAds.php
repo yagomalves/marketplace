@@ -1,20 +1,30 @@
 <?php
 
-    include_once "header.php";
-    include_once "includes/protect.inc.php";
+include_once "header.php";
+include_once "includes/protect.inc.php";
 
-    include './classes/Dbh.classes.php';
-    include './classes/myAdsInfo.classes.php';
-    include './views/myAdsInfo_view.classes.php';
+include './classes/Dbh.classes.php';
+include './classes/myAdsInfo.classes.php';
+include './views/myAdsInfo_view.classes.php';
 
 
-    $adsInfo = new MyAdsInfoView();
+$adsInfo = new MyAdsInfoView();
 ?>
 
-<p><a href="adSolo.php">
-    <?= $adsInfo->FetchAllAdsTitle($_SESSION["userid"]); ?>
-</a></p>
+<body>
+    <main>
+        <div class="myAds">
+            <div class="title">
+                <h2>Meus anúncios</h2>
+            </div>
+            <ul>
+                <li>
+                    <a href="adSolo.php">
+                        <h4><?= $adsInfo->FetchAllAdsTitle($_SESSION["userid"]); ?></h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
 
-<?php
-    include_once "adFooter.php";
-?>
+</body>
