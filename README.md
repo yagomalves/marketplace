@@ -37,6 +37,8 @@ transformar "tipos" de anúncios em dropdown
 
 resgatar data do anúncio
 
+botao de alterar anuncio caso o user_id de quem acessa seja igual ao do dono do anuncio
+
 --------------------------------------------------------------------------
 
 Banco de dados: ooplogin

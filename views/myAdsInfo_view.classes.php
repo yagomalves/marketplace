@@ -7,7 +7,7 @@ class MyAdsInfoView extends MyAdsInfo
         $adsInfo = $this->GetAdInfo($userId);
         if (!empty($adsInfo)) {
             foreach ($adsInfo as $ad) {
-                echo "<a href='adSolo.php'>" . $ad["ad_title"] . "</a><br><br>";
+                echo "<a href='adSolo.php?'>" . $ad["ad_title"] . "</a><br><br>";
             }
         }
     }
@@ -15,23 +15,24 @@ class MyAdsInfoView extends MyAdsInfo
     public function FetchAdTitle($userId)
     {
         $adsInfo = $this->GetAdInfo($userId);
-        echo "<p>" . $adsInfo[0]["ad_title"] . "</p>";
-    }
-    public function FetchAdId($userId)
-    {
-        $adsInfo = $this->GetAdInfo($userId);
-        echo "<p>" . $adsInfo[0]["ad_id"] . "</p>";
+        echo "<p>" . $adsInfo[0]["ad_title"] . "</p><br><br>";
     }
 
     public function FetchType($userId)
     {
         $adsInfo = $this->GetAdInfo($userId);
-        echo $adsInfo[0]["ad_type"];
+        echo "<p>" . $adsInfo[0]["ad_type"] . "</p><br><br>";
     }
 
     public function FetchDescription($userId)
     {
         $adsInfo = $this->GetAdInfo($userId);
-        echo $adsInfo[0]["ad_description"];
+        echo "<p>" . $adsInfo[0]["ad_description"] . "</p><br><br>";
     } 
+    public function FetchDate($userId)
+    {
+        $adsInfo = $this->GetAdInfo($userId);
+        echo "<p>" . $adsInfo[0]["ad_date"] . "</p><br><br>";
+    } 
+    
 }
