@@ -4,7 +4,7 @@ class MyAdsInfo extends Dbh
 {
     protected function GetAdInfo($userId)
     {
-        $stmt = $this->connect()->prepare("SELECT ad_title FROM ad WHERE users_id = ?;");
+        $stmt = $this->connect()->prepare("SELECT * FROM ad WHERE users_id = ?;");
 
         if(!$stmt->execute(array($userId))) {
             $stmt = null;

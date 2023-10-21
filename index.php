@@ -14,7 +14,7 @@ include_once "header.php";
         <?php
         } else {
         ?>
-            <div class='mainForm'>
+            <div class="mainForm">
                 <div class="mainFormFields">
                     <h2>Cadastrar</h2>
                     <form action="includes/signup.inc.php" method="post">

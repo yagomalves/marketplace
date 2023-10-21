@@ -2,9 +2,9 @@
 include_once "header.php";
 include_once "includes/protect.inc.php";
 
-include './classes/Dbh.classes.php';
-include './classes/profileinfo.classes.php';
-include './views/profileinfo_view.classes.php';
+include "./classes/Dbh.classes.php";
+include "./classes/profileinfo.classes.php";
+include "./views/profileinfo_view.classes.php";
 
 $profileInfo = new ProfileInfoView();
 

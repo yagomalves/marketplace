@@ -1,5 +1,41 @@
 Kauã: Trabalhando na UI (Parte interativa) das páginas já adicionadas.
-Yago: atualmente trabalhando na página adSolo.php que consiste em exibir os anúncios individualmente, tanto para atualizar, quanto para excluir.
+
+
+
+Yago: atualmente trabalhando com inserção de rotas para dar continuidade à página adSolo.php que consiste em exibir os anúncios individualmente, tanto para atualizar, quanto para excluir. 
+
+--------------------------------------------------------------------------
+
+A fazer:
+
+crud anúncio - PAGINA adSolo.php
+-read
+-updtate
+-delete
+
+
+Bug:
+-telefone($phone) as vezes cadastra e atualiza numero predefinido.
+-usar DATE com formato Brasileiro
+
+
+upload imagem de perfil
+upload imagem de anuncio
+
+
+-média do USER
+-cometários de antigos contratantes no perfil visitado
+-quantidade de serviços prestados e contratados
+
+Inserir sistema de rotas
+
+fazer pop-up de erro para query
+
+inserir pesquisa de cep com resgate de loc
+
+transformar "tipos" de anúncios em dropdown
+
+resgatar data do anúncio
 
 --------------------------------------------------------------------------
 
@@ -35,4 +71,3 @@ pwdreset:
 -pwdResetToken LONGTEXT
 -pwdResetExpires TEXT
 -pwdResetId INT AUTO_INCREMENT
-
