@@ -1,8 +1,11 @@
+SISTEMA DE ROTAS INSERIDO MAS SISTEMA AINDA NÃO ADAPTADO
+
+
 Kauã: Trabalhando na UI (Parte interativa) das páginas já adicionadas.
 
 
 
-Yago: atualmente trabalhando com inserção de rotas para dar continuidade à página adSolo.php que consiste em exibir os anúncios individualmente, tanto para atualizar, quanto para excluir. 
+Yago: atualmente finalizando inserção de rotas para dar continuidade à página adSolo.php que consiste em exibir os anúncios individualmente, tanto para atualizar, quanto para excluir. 
 
 --------------------------------------------------------------------------
 
@@ -26,8 +29,6 @@ upload imagem de anuncio
 -média do USER
 -cometários de antigos contratantes no perfil visitado
 -quantidade de serviços prestados e contratados
-
-Inserir sistema de rotas
 
 fazer pop-up de erro para query
 

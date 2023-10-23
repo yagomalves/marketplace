@@ -1,0 +1,17 @@
+{
+    "name": "pc/marketplace",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yagomalves",
+            "email": "yago.melo@souunit.com.br"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^6.0"
+    }
+}
