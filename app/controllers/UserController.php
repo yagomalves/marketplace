@@ -9,9 +9,16 @@ class UserController
 
     public function show()
     {
-        
+        include_once "../app/helpers/protect.php";
         include_once "../app/helpers/bootstrap.php";
         include_once "../app/helpers/navbar.php";
+
+        include "../app/classes/Dbh.classes.php";
+        include "../app/classes/profileinfo.classes.php";
+        include "../app/views/profileinfo_view.classes.php";
+
+        include "../app/classes/accountinfo.classes.php";
+        include "../app/views/accountinfo_view.classes.php";
 
         $profileInfo = new ProfileInfoView();
 
@@ -33,7 +40,7 @@ class UserController
             ?>
         </div>
         
-        <p><a href="profilesettings.php">Profile settings</a></p>
+        <p><a href="/profilesettings">Profile settings</a></p>
         <hr>
         <br>
         
@@ -54,7 +61,7 @@ class UserController
         echo "<br> <br>";
         ?>
         
-        <p><a href="accountsettings.php">Account settings</a></p>
+        <p><a href="/accountsettings">Account settings</a></p>
         
         <?php
 

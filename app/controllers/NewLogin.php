@@ -5,10 +5,9 @@ use LoginController;
 
 class NewLogin
 {
-    public function show()
+    public function get()
     {
         $this->fetchUser();
-        var_dump($_SESSION);
     }
 
     protected function fetchUser()

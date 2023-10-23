@@ -7,6 +7,8 @@ class ResetPassword
 {
     public function show()
     {
+        include_once "../app/helpers/bootstrap.php";
+        include_once "../app/helpers/navbar.php";
 ?>
         <h1>Reset Password</h1><br><br>
             <form action="/emailsend" method="post">

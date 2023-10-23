@@ -10,16 +10,23 @@ class Routes
                 '/' => 'HomeController@index',
                 '/logout' => 'LogoutController@execute',
                 '/user' => 'UserController@show',
+                '/resetpass' => 'ResetPassword@show',
+                '/setnewpass' => 'NewPassword@show',
                 '/user/[0-9]+' => 'UserController@edit',
                 '/product/[a-z]+/category/[a-z]+' => 'ProductController@show',
-                '/resetpass' => 'ResetPassword@show',
-                '/setnewpass' => 'NewPassword@show'
+                '/newad' => 'NewAd@show',
+                '/myads' => 'MyAds@show',
+                '/profilesettings' => 'ProfileSettings@show',
+                '/accountsettings' => 'AccountSettings@show'
             ],
             'post' => [
-                '/login' => 'NewLogin@show',
+                '/login' => 'NewLogin@get',
                 '/register' => 'RegisterController@store',
                 '/emailsend' => 'ResetPassword@reset',
-                '/setnewpass' => 'NewPassword@set'
+                '/setnewpass' => 'NewPassword@set',
+                '/newad' => 'NewAd@set',
+                '/profilesettings' => 'ProfileSettings@set',
+                '/accountsettings' => 'AccountSettings@set'
                 ]
         ];
     }

@@ -6,7 +6,8 @@ class HomeController
     public function index()
     {
 
-    include_once "../app/helpers/navbar.php";
+        include_once "../app/helpers/bootstrap.php";
+        include_once "../app/helpers/navbar.php";
 ?>
 
 <section>

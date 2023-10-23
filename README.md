@@ -1,11 +1,7 @@
-SISTEMA DE ROTAS INSERIDO MAS SISTEMA AINDA NÃO ADAPTADO
-
-
 Kauã: Trabalhando na UI (Parte interativa) das páginas já adicionadas.
 
 
-
-Yago: insertAd, myAds, adSolo, profileInfo view, AccountInfo view AINDA NAO FUNCIONANDO. Agora estou finalizando inserção de rotas para darei continuidade à página adSolo.php. 
+Yago: Agora estou dando continuidade à página adSolo.php. 
 
 --------------------------------------------------------------------------
 

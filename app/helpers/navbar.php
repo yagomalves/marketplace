@@ -21,9 +21,9 @@
             <?php
             if (isset($_SESSION["userid"])) {
             ?>
-                <p><a href="profile.php"><?php echo $_SESSION["user_first_name"]; ?></a></p>
-                <p><a href="insertAd.php">Anuncie</a></p>
-                <p><a href="myAds.php">Meus anúncios</a></p>
+                <p><a href="/user"><?php echo $_SESSION["user_first_name"]; ?></a></p>
+                <p><a href="/newad">Anuncie</a></p>
+                <p><a href="/myads">Meus anúncios</a></p>
                 <p><a href="/logout">LOGOUT</a></p>
 
 
