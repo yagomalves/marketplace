@@ -1,12 +1,3 @@
-<?php
-use app\core\Router;
-
-require "../vendor/autoload.php";
-
-session_start();
-
-Router::run();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,7 +13,7 @@ Router::run();
     <nav class="mainHeader">
         <div>
             <ul class="homeLink">
-                <p><a href="index.php">Home</a></p>
+                <p><a href="/">Home</a></p>
             </ul>
         </div>
 
@@ -33,7 +24,7 @@ Router::run();
                 <p><a href="profile.php"><?php echo $_SESSION["user_first_name"]; ?></a></p>
                 <p><a href="insertAd.php">Anuncie</a></p>
                 <p><a href="myAds.php">Meus anúncios</a></p>
-                <p><a href="./includes/logout.inc.php">LOGOUT</a></p>
+                <p><a href="/logout">LOGOUT</a></p>
 
 
             <?php

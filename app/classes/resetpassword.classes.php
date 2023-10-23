@@ -20,7 +20,7 @@ class ResetPassword extends  Dbh
         $selector = bin2hex(random_bytes(8));
         $token = random_bytes(32);
         $expires = date("U") + 1800;
-        $url = "http://localhost/projetos/marketplace/web/createnewpassword.php?selector=" . $selector . "&validator=" . bin2hex($token);
+        $url = "http://localhost:8000/setnewpass?selector=" . $selector . "&validator=" . bin2hex($token);
         $hashedToken = password_hash($token, PASSWORD_DEFAULT);
 
 

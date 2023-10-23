@@ -5,7 +5,7 @@ Kauã: Trabalhando na UI (Parte interativa) das páginas já adicionadas.
 
 
 
-Yago: atualmente finalizando inserção de rotas para dar continuidade à página adSolo.php que consiste em exibir os anúncios individualmente, tanto para atualizar, quanto para excluir. 
+Yago: insertAd, myAds, adSolo, profileInfo view, AccountInfo view AINDA NAO FUNCIONANDO. Agora estou finalizando inserção de rotas para darei continuidade à página adSolo.php. 
 
 --------------------------------------------------------------------------
 

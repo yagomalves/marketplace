@@ -1,5 +1,6 @@
 <?php
 
+
 class InsertAdController extends InsertAd
 {
     private $title;

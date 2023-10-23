@@ -15,5 +15,3 @@ $adsInfo->FetchDescription($_SESSION["userid"]);
 $adsInfo->FetchType($_SESSION["userid"]);
 $adsInfo->FetchDate($_SESSION["userid"]);
 
-
-include_once "adFooter.php";

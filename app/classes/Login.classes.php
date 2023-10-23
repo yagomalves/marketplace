@@ -31,7 +31,7 @@ class Login extends Dbh
             $_SESSION["user_last_name"] = $user["user_last_name"];
             
             
-            header("Location: ../index.php?error=none");
+            header("Location: /user");
             
             exit();
         } else {
