@@ -9,13 +9,13 @@ class Login extends Dbh
 
         if (!$stmt->execute()) {
             $stmt = null;
-            header("Location: ../index.php?error=stmtfailed");
+            header("Location: ../?error=stmtfailed");
             exit();
         }
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("Location: ../index.php?error=usernotfound");
+            header("Location: ../?error=usernotfound");
             exit();
         }
 
@@ -31,11 +31,11 @@ class Login extends Dbh
             $_SESSION["user_last_name"] = $user["user_last_name"];
             
             
-            header("Location: /user");
+            header("Location: /");
             
             exit();
         } else {
-            header("Location: ../index.php?error=wrongpassword");
+            header("Location: ../?error=wrongpassword");
             exit();
         }
     }

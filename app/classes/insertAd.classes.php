@@ -10,7 +10,7 @@ class InsertAd extends Dbh
 
         if (!$stmt->execute(array($title, $type, $description, $user_id, $adDate))) {
             $stmt = null;
-            header("Location: ./profile.php?error=stmtfailed");
+            header("Location: /user?error=stmtfailed");
             exit();
         }
 

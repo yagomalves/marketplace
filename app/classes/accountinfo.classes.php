@@ -8,13 +8,13 @@ class AccountInfo extends Dbh
 
         if(!$stmt->execute(array($userId))) {
             $stmt = null;
-            header("Location: profile.php?error=stmtfailed");
+            header("Location: /user?error=stmtfailed");
             exit();
         }
 
         if($stmt->rowCount() == 0) {
             $stmt = null;
-            header("Location: profile.php?error=profilenotfound");
+            header("Location: /user?error=profilenotfound");
             exit();
         }
 
@@ -29,7 +29,7 @@ class AccountInfo extends Dbh
 
         if(!$stmt->execute(array($accountEmail, $accountPhone, $accountFirstName, $accountLastName, $userId))) {
             $stmt = null;
-            header("Location: profile.php?error=stmtfailed");
+            header("Location: /user?error=stmtfailed");
             exit();
         }
 

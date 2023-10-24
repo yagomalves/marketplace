@@ -24,19 +24,19 @@ class SignupController extends Signup
     public function SignupUser()
     {
         if($this->emptyInput() == false) {
-            header("Location: ../index.php?error=emptyinput");
+            header("Location: /?error=emptyinput");
             exit();
         } 
         if($this->invalidEmail() == false) {
-            header("Location: ../index.php?error=email");
+            header("Location: /?error=email");
             exit();
         }
         if($this->PwdMatch() == false) {
-            header("Location: ../index.php?error=passwordmatch");
+            header("Location: /?error=passwordmatch");
             exit();
         }
         if($this->UidTakenCheck() == false) {
-            header("Location: ../index.php?error=useroremailtaken");
+            header("Location: /?error=useroremailtaken");
             exit();
         }
 

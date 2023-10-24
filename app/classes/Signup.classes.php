@@ -10,7 +10,7 @@ class Signup extends Dbh
 
         if (!$stmt->execute(array($hashedPwd, $email, $firstName, $lastName, $phone, $signupDate))) {
             $stmt = null;
-            header("Location: index.php?error=stmtfailed");
+            header("Location: /?error=stmtfailed");
             exit();
         }
 
@@ -24,7 +24,7 @@ class Signup extends Dbh
 
         if (!$stmt->execute(array($email))) {
             $stmt = null;
-            header("Location: index.php?error=stmtfailed");
+            header("Location: /?error=stmtfailed");
             exit();
         }
 
@@ -46,13 +46,13 @@ class Signup extends Dbh
 
         if(!$stmt->execute(array($email))) {
             $stmt = null;
-            header("Location: profile.php?error=stmtfailed");
+            header("Location: /user?error=stmtfailed");
             exit();
         }
 
         if($stmt->rowCount() == 0) {
             $stmt = null;
-            header("Location: profile.php?error=profilenotfound");
+            header("Location: /user?error=profilenotfound");
             exit();
         }
 

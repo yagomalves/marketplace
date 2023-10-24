@@ -23,7 +23,7 @@ class InsertAdController extends InsertAd
     public function SubmitAd()
     {
         if($this->emptyInput() == false) {
-            header("Location: ../index.php?error=emptyinput");
+            header("Location: /?error=emptyinput");
             exit();
         }
 

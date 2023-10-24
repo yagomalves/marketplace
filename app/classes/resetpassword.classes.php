@@ -7,14 +7,14 @@ class ResetPassword extends  Dbh
 
         $email = htmlspecialchars($_POST["email"], ENT_QUOTES, 'UTF-8');
         if (empty($email)) {
-            die("Location: resetpassword.php?error=emailmissing");
+            die("Location: /resetpass?error=emailmissing");
         }
 
         $stmt = $this->connect()->prepare("DELETE FROM pwdreset WHERE pwdResetEmail = :email;");
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
         if (!$stmt->execute()) {
-            die("Location: resetpassword.php?error=stmtfailed");
+            die("Location: /resetpass?error=stmtfailed");
         }
 
         $selector = bin2hex(random_bytes(8));
@@ -43,6 +43,6 @@ class ResetPassword extends  Dbh
 
         mail($to, $subject, $message, $headers);
 
-        header("Location: resetpassword.php?reset=success");
+        header("Location: /resetpass?reset=success");
     }
 }

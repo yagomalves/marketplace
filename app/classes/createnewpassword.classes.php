@@ -11,10 +11,10 @@ class NewPassword extends Dbh
         $currentDate = date("U");
 
         if (empty($password) || empty($passwordRepeat)) {
-            header("Location: ../resetpassword.php?newpwd=empty");
+            header("Location: ../resetpass?newpwd=empty");
             exit();
         } else if ($password != $passwordRepeat) {
-            header("Location: ../resetpassword.php?newpwd=pwdnotsame");
+            header("Location: ../resetpass?newpwd=pwdnotsame");
             exit();
         }
 
@@ -63,7 +63,7 @@ class NewPassword extends Dbh
                     if (!$stmt->execute()) {
                         die("error=stmtfailed");
                     } else {
-                        header("Location: index.php?newpwd=success");
+                        header("Location: /?newpwd=success");
                     }
                 }
             }

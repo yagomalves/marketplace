@@ -8,13 +8,13 @@ class MyAdsInfo extends Dbh
 
         if(!$stmt->execute(array($userId))) {
             $stmt = null;
-            header("Location: ./profile.php?error=stmtfailed");
+            header("Location: /user?error=stmtfailed");
             exit();
         }
 
         if($stmt->rowCount() == 0) {
             $stmt = null;
-            header("Location: ./profile.php?error=adnotfound");
+            header("Location: /user?error=adnotfound");
             exit();
         }
 
@@ -29,7 +29,7 @@ class MyAdsInfo extends Dbh
 
         if(!$stmt->execute(array($profileAbout, $profileTitle, $profileText, $userId))) {
             $stmt = null;
-            header("Location: ./profile.php?error=stmtfailed");
+            header("Location: /user?error=stmtfailed");
             exit();
         }
 
