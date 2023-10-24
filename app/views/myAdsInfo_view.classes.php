@@ -7,32 +7,141 @@ class MyAdsInfoView extends MyAdsInfo
         $adsInfo = $this->GetAdInfo($userId);
         if (!empty($adsInfo)) {
             foreach ($adsInfo as $ad) {
-                echo "<a href='adSolo.php?'>" . $ad["ad_title"] . "</a><br><br>";
+                $adId = $ad['ad_id'];
+                echo "<a href='/ad/{$adId}'>" . $ad['ad_title'] . "</a><br><br>";
+                
             }
         }
     }
 
+    
     public function FetchAdTitle($userId)
     {
-        $adsInfo = $this->GetAdInfo($userId);
-        echo "<p>" . $adsInfo[0]["ad_title"] . "</p><br><br>";
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_title'] . "<br><br>";
+                }
+                
+            }
     }
 
     public function FetchType($userId)
     {
-        $adsInfo = $this->GetAdInfo($userId);
-        echo "<p>" . $adsInfo[0]["ad_type"] . "</p><br><br>";
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_type'] . "<br><br>";
+                }
+                
+            }
     }
 
     public function FetchDescription($userId)
     {
-        $adsInfo = $this->GetAdInfo($userId);
-        echo "<p>" . $adsInfo[0]["ad_description"] . "</p><br><br>";
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_description'] . "<br><br>";
+                }
+                
+            }
     } 
     public function FetchDate($userId)
     {
-        $adsInfo = $this->GetAdInfo($userId);
-        echo "<p>" . $adsInfo[0]["ad_date"] . "</p><br><br>";
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_date'] . "<br><br>";
+                }
+                
+            }
+    } 
+    public function FetchPrice($userId)
+    {
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_price'] . "<br><br>";
+                }
+                
+            }
+    } 
+    public function FetchCep($userId)
+    {
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_cep'] . "<br><br>";
+                }
+                
+            }
+    } 
+    public function FetchState($userId)
+    {
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_state'] . "<br><br>";
+                }
+                
+            }
+    } 
+    public function FetchCity($userId)
+    {
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_city'] . "<br><br>";
+                }
+                
+            }
+    } 
+    public function FetchDistrict($userId)
+    {
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+
+        $anuncios = $this->GetAdInfo($userId);
+            foreach ($anuncios as $anuncio) 
+            {
+                if($anuncio['ad_id'] == $adId){
+                    echo $anuncio['ad_district'] . "<br><br>";
+                }
+                
+            }
     } 
     
 }

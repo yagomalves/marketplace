@@ -17,7 +17,8 @@ class Routes
                 '/newad' => 'NewAd@show',
                 '/myads' => 'MyAds@show',
                 '/profilesettings' => 'ProfileSettings@show',
-                '/accountsettings' => 'AccountSettings@show'
+                '/accountsettings' => 'AccountSettings@show',
+                '/ad/[0-9]+' => 'AdSolo@show'
             ],
             'post' => [
                 '/login' => 'NewLogin@get',

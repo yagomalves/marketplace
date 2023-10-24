@@ -9,13 +9,13 @@ class Login extends Dbh
 
         if (!$stmt->execute()) {
             $stmt = null;
-            header("Location: ../?error=stmtfailed");
+            header("Location: /?error=stmtfailed");
             exit();
         }
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("Location: ../?error=usernotfound");
+            header("Location: /?error=usernotfound");
             exit();
         }
 
@@ -35,7 +35,7 @@ class Login extends Dbh
             
             exit();
         } else {
-            header("Location: ../?error=wrongpassword");
+            header("Location: /?error=wrongpassword");
             exit();
         }
     }

@@ -8,7 +8,8 @@ Yago: Agora estou dando continuidade à página adSolo.php.
 A fazer:
 
 crud anúncio - PAGINA adSolo.php
--read
+-read OK
+-botao de alterar anuncio caso o user_id de quem acessa seja igual ao do dono do anuncio
 -updtate
 -delete
 
@@ -17,6 +18,7 @@ Bugs:
 -telefone($phone) as vezes cadastra e atualiza numero predefinido.
 -usar DATE com formato Brasileiro
 -textareas salvando com espaços em branco
+-NAVBAR da página AdSolo está sem CSS
 
 
 upload imagem de perfil
@@ -29,7 +31,7 @@ upload imagem de anuncio
 
 fazer pop-up de erro para query
 
-pesquisa de cep automatico
+pesquisa de cep automatico / DROPDOWN ?
 -estado
 -cidade
 -bairro
@@ -61,6 +63,11 @@ ad:
 -ad_type VARCHAR 255
 -users_id INT REFERENCES users(users_id)
 -ad_date DATETIME
+-ad_price INT
+-ad_cep VARCHAR 255
+-ad_state VARCHAR 255
+-ad_city VARCHAR 255
+-ad_district VARCHAR 255
 
 profiles:
 -profiles_id INT AUTO_INCREMENT
