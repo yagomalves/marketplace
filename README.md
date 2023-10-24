@@ -13,9 +13,10 @@ crud anúncio - PAGINA adSolo.php
 -delete
 
 
-Bug:
+Bugs:
 -telefone($phone) as vezes cadastra e atualiza numero predefinido.
 -usar DATE com formato Brasileiro
+-textareas salvando com espaços em branco
 
 
 upload imagem de perfil
@@ -28,13 +29,17 @@ upload imagem de anuncio
 
 fazer pop-up de erro para query
 
-inserir pesquisa de cep com resgate de loc
+pesquisa de cep automatico
+-estado
+-cidade
+-bairro
 
-transformar "tipos" de anúncios em dropdown
-
-resgatar data do anúncio
+resgatar data do anúncio em formato BR
 
 botao de alterar anuncio caso o user_id de quem acessa seja igual ao do dono do anuncio
+botão de favoritar
+botão de compartilhar
+botão denunciar
 
 --------------------------------------------------------------------------
 

@@ -9,8 +9,13 @@ class InsertAdController extends InsertAd
     private $adDate;
    // private $image;
     private $user_id;
+    private $price;
+    private $cep;
+    private $state;
+    private $city;
+    private $district;
 
-    public function __construct($title, $type, $description, $user_id, $adDate)
+    public function __construct($title, $type, $description, $user_id, $adDate, $price, $cep, $state, $city, $district)
     {
         $this->title = $title;
         $this->type = $type;
@@ -18,6 +23,11 @@ class InsertAdController extends InsertAd
         $this->adDate = $adDate;
     //    $this->image = $image;
         $this->user_id = $user_id;
+        $this->price = $price;
+        $this->cep = $cep;
+        $this->state = $state;
+        $this->city = $city;
+        $this->district = $district;
     }
 
     public function SubmitAd()
@@ -27,7 +37,7 @@ class InsertAdController extends InsertAd
             exit();
         }
 
-    $this->setAd($this->title, $this->type, $this->description, $this->user_id, $this->adDate);
+    $this->setAd($this->title, $this->type, $this->description, $this->user_id, $this->adDate, $this->price, $this->cep, $this->state, $this->city, $this->district);
 
     }
 
