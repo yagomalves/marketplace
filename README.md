@@ -1,9 +1,11 @@
 Kauã: Trabalhando na UI (Parte interativa) das páginas já adicionadas.
 
 
-Yago: Agora estou dando continuidade à página adSolo.php. 
+Yago: Configurando as adaptações do chat para o nosso projeto.
+
 
 --------------------------------------------------------------------------
+
 
 A fazer:
 
@@ -16,13 +18,21 @@ Bugs:
 Melhoras:
 -transformar $adId em uma constante na myadsinfo VIEW
 -adicionar tratamento de erros nos controllers (_controller)
+-inserir nome e telefone no anúncio
+-senha (visualizar e pedir senha forte)
+
+Banner da Home
+
+Carrosel da Home 
 
 upload imagem de perfil
-upload imagem de anuncio
+upload imagens de anuncio
 
 -média do USER
 -cometários de antigos contratantes no perfil visitado
 -quantidade de serviços prestados e contratados
+
+input de pesquisa na NAVBAR
 
 pesquisa de cep automatico / DROPDOWN ?
 -estado
