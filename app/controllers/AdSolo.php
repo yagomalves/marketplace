@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 use MyAdsInfoView;
+use MyAdsInfo;
 
 class AdSolo
 {
@@ -13,7 +14,7 @@ class AdSolo
         include "../app/classes/Dbh.classes.php";
         include "../app/classes/myAdsInfo.classes.php";
         include "../app/views/myAdsInfo_view.classes.php";
-
+        
 
         $adsInfo = new MyAdsInfoView();
 
@@ -40,6 +41,12 @@ class AdSolo
 
     public function edit()
     {
+        
+        
+        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
+        $adId = $urr[2];
+        
+
         include_once "../app/helpers/bootstrap.php";
         include_once "../app/helpers/navbar.php";
 
@@ -47,93 +54,98 @@ class AdSolo
         include "../app/classes/myAdsInfo.classes.php";
         include "../app/views/myAdsInfo_view.classes.php";
 
-        $editAd = new MyAdsInfoView();
-        $urr = explode('/',parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); 
-        $adId = $urr[2];
-?>
+        $adsInfo = new MyAdsInfo();
+        $adsInfo->ValidateUserAd($_SESSION["userid"], $adId);
+        
 
-        <section>
-        <br>
-        <form action="/edit/<?=$adId?>" method="POST">
+                
+                $editAd = new MyAdsInfoView();
+        ?>
 
-        <label>Título</label><br>
-            <input type="text" placeholder="Title" name="title" value="
-    <?php
-            $editAd->FetchAdTitle($_SESSION["userid"]);
-    ?>
-    ">
+                <section>
+                <br>
+                <form action="/edit/<?=$adId?>" method="POST">
 
-            <br><br>
+                <label>Título</label><br>
+                <input type="text" placeholder="Title" name="title" value="
+        <?php
+                $editAd->FetchAdTitle($_SESSION["userid"]);
+        ?>
+        ">
 
-            <label for="type">Tipo</label><br>
-            <select name="type" value="oi">
-    <option>
-    <?php
-    $editAd->FetchType($_SESSION["userid"]);
-    ?>          
-    </option>
-                <option>Doméstico</option>
-                <option>Babá</option>
-                <option>Jurídico</option>
-                <option>Economia</option>
-                <option>Festa e Evento</option>
-                <option>Manutenção e Reforma</option>
-                <option>Saúde e Beleza</option>
-                <option>Informática</option>
-                <option>Transporte</option>
-                <option>Frete</option>
-                <option>Turismo</option>
-            </select>
-            
+                <br><br>
 
-            <br><br>
+                <label for="type">Tipo</label><br>
+                <select name="type" value="oi">
+        <option>
+        <?php
+        $editAd->FetchType($_SESSION["userid"]);
+        ?>          
+        </option>
+                        <option>Doméstico</option>
+                        <option>Babá</option>
+                        <option>Jurídico</option>
+                        <option>Economia</option>
+                        <option>Festa e Evento</option>
+                        <option>Manutenção e Reforma</option>
+                        <option>Saúde e Beleza</option>
+                        <option>Informática</option>
+                        <option>Transporte</option>
+                        <option>Frete</option>
+                        <option>Turismo</option>
+                </select>
+                
 
-            <label>Descrição</label><br>
-            <textarea name="description" cols="30" rows="10" placeholder="Type a text as your introduction">
-    <?=$editAd->FetchDescription($_SESSION["userid"]);?>
-            </textarea><br><br>
+                <br><br>
 
-            <label>Preço</label><br>
-            <textarea name="price" cols="30" rows="10" placeholder="00,00">
-    <?php
-            $editAd->FetchPrice($_SESSION["userid"]);
-    ?>
-            </textarea><br><br>
+                <label>Descrição</label><br>
+                <textarea name="description" cols="30" rows="10" placeholder="Type a text as your introduction">
+        <?=$editAd->FetchDescription($_SESSION["userid"]);?>
+                </textarea><br><br>
 
-            <label>CEP</label><br>
-            <textarea name="cep" cols="30" rows="10" placeholder="00000-000">
-    <?php
-            $editAd->FetchCep($_SESSION["userid"]);
-    ?>
-            </textarea><br><br>
+                <label>Preço</label><br>
+                <textarea name="price" cols="30" rows="10" placeholder="00,00">
+        <?php
+                $editAd->FetchPrice($_SESSION["userid"]);
+        ?>
+                </textarea><br><br>
 
-            <label>Estado</label><br>
-            <textarea name="state" cols="30" rows="10" placeholder="Estado">
-    <?php
-            $editAd->FetchState($_SESSION["userid"]);
-    ?>
-            </textarea><br><br>
+                <label>CEP</label><br>
+                <textarea name="cep" cols="30" rows="10" placeholder="00000-000">
+        <?php
+                $editAd->FetchCep($_SESSION["userid"]);
+        ?>
+                </textarea><br><br>
 
-            <label>Cidade</label><br>
-            <textarea name="city" cols="30" rows="10" placeholder="Cidade">
-    <?php
-            $editAd->FetchCity($_SESSION["userid"]);
-    ?>
-            </textarea><br><br>
+                <label>Estado</label><br>
+                <textarea name="state" cols="30" rows="10" placeholder="Estado">
+        <?php
+                $editAd->FetchState($_SESSION["userid"]);
+        ?>
+                </textarea><br><br>
 
-            <label>Bairro</label><br>
-            <textarea name="district" cols="30" rows="10" placeholder="Bairro">
-    <?php
-            $editAd->FetchDistrict($_SESSION["userid"]);
-    ?>
-            </textarea><br><br>
+                <label>Cidade</label><br>
+                <textarea name="city" cols="30" rows="10" placeholder="Cidade">
+        <?php
+                $editAd->FetchCity($_SESSION["userid"]);
+        ?>
+                </textarea><br><br>
 
-            <br><br>
-            <button type="submit" name="submit">EDITAR</button>
-        </form>
-    </section>
+                <label>Bairro</label><br>
+                <textarea name="district" cols="30" rows="10" placeholder="Bairro">
+        <?php
+                $editAd->FetchDistrict($_SESSION["userid"]);
+        ?>
+                </textarea><br><br>
 
-<?php
+                <br><br>
+                <button type="submit" name="submit">EDITAR</button>
+                </form>
+        </section>
+
+        <?php
+        
+        
     }
 
     public function set()

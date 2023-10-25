@@ -2,11 +2,33 @@
 
 class MyAdsInfo extends Dbh
 {
-    protected function GetAdInfo($userId)
+    public function GetAdInfo($userId)
     {
         $stmt = $this->connect()->prepare("SELECT * FROM ad WHERE users_id = ?;");
 
         if(!$stmt->execute(array($userId))) {
+            $stmt = null;
+            header("Location: /myads?error=stmtfailed");
+            exit();
+        }
+
+        if($stmt->rowCount() == 0) {
+            // $stmt = null;
+            echo "Nenhum anúncio encontrado";
+            // header("Location: /myads?error=adnotfound");
+            exit();
+        }
+
+        $adsInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $adsInfo;
+    }
+
+    public function ValidateUserAd($userId, $adId)
+    {
+        $stmt = $this->connect()->prepare("SELECT * FROM ad WHERE users_id = ? AND ad_id = ?;");
+
+        if(!$stmt->execute(array($userId, $adId))) {
             $stmt = null;
             header("Location: /myads?error=stmtfailed");
             exit();

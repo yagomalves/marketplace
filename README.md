@@ -17,7 +17,6 @@ Melhoras:
 -transformar $adId em uma constante na myadsinfo VIEW
 -adicionar tratamento de erros nos controllers (_controller)
 
-
 upload imagem de perfil
 upload imagem de anuncio
 
