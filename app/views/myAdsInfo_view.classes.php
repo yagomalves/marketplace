@@ -8,7 +8,9 @@ class MyAdsInfoView extends MyAdsInfo
         if (!empty($adsInfo)) {
             foreach ($adsInfo as $ad) {
                 $adId = $ad['ad_id'];
-                echo "<a href='/ad/{$adId}'>" . $ad['ad_title'] . "</a><br><br>";
+                echo "<a href='/ad/{$adId}'>" . $ad['ad_title'] . "</a><br><br>"
+                 ."<a href='/delete/{$adId}'>-deletar<br>"
+                 ."<a href='/edit/{$adId}'>-editar<br><br><br><br><br>";
                 
             }
         }
@@ -24,7 +26,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_title'] . "<br><br>";
+                    echo $anuncio['ad_title'];
                 }
                 
             }
@@ -39,7 +41,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_type'] . "<br><br>";
+                    echo $anuncio['ad_type'];
                 }
                 
             }
@@ -54,7 +56,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_description'] . "<br><br>";
+                    echo $anuncio['ad_description'];
                 }
                 
             }
@@ -68,7 +70,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_date'] . "<br><br>";
+                    echo $anuncio['ad_date'];
                 }
                 
             }
@@ -82,7 +84,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_price'] . "<br><br>";
+                    echo $anuncio['ad_price'];
                 }
                 
             }
@@ -96,7 +98,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_cep'] . "<br><br>";
+                    echo $anuncio['ad_cep'];
                 }
                 
             }
@@ -110,7 +112,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_state'] . "<br><br>";
+                    echo $anuncio['ad_state'];
                 }
                 
             }
@@ -124,7 +126,7 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_city'] . "<br><br>";
+                    echo $anuncio['ad_city'];
                 }
                 
             }
@@ -138,10 +140,21 @@ class MyAdsInfoView extends MyAdsInfo
             foreach ($anuncios as $anuncio) 
             {
                 if($anuncio['ad_id'] == $adId){
-                    echo $anuncio['ad_district'] . "<br><br>";
+                    echo $anuncio['ad_district'];
                 }
                 
             }
     } 
+
+    public function DeleteAd($userId)
+    {
+        $this->DeleteAdInfo($userId);
+        header('Location: /myads');
+    }
+
+    public function EditAd($title, $type, $description, $price, $cep, $state, $city, $district, $adId)
+    {
+        $this->SetNewAdInfo($title, $type, $description, $price, $cep, $state, $city, $district, $adId);
+    }
     
 }

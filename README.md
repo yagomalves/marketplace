@@ -7,41 +7,38 @@ Yago: Agora estou dando continuidade à página adSolo.php.
 
 A fazer:
 
-crud anúncio - PAGINA adSolo.php
--read OK
--botao de alterar anuncio caso o user_id de quem acessa seja igual ao do dono do anuncio
--updtate
--delete
-
-
 Bugs:
 -telefone($phone) as vezes cadastra e atualiza numero predefinido.
 -usar DATE com formato Brasileiro
 -textareas salvando com espaços em branco
 -NAVBAR da página AdSolo está sem CSS
 
+Melhoras:
+-transformar $adId em uma constante na myadsinfo VIEW
+-adicionar tratamento de erros nos controllers (_controller)
+
 
 upload imagem de perfil
 upload imagem de anuncio
 
-
 -média do USER
 -cometários de antigos contratantes no perfil visitado
 -quantidade de serviços prestados e contratados
-
-fazer pop-up de erro para query
 
 pesquisa de cep automatico / DROPDOWN ?
 -estado
 -cidade
 -bairro
 
-resgatar data do anúncio em formato BR
-
-botao de alterar anuncio caso o user_id de quem acessa seja igual ao do dono do anuncio
 botão de favoritar
 botão de compartilhar
 botão denunciar
+
+resgatar data do anúncio em formato BR
+
+fazer pop-up de erro para query
+
+chat
 
 --------------------------------------------------------------------------
 

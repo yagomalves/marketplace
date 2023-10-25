@@ -12,13 +12,14 @@ class Routes
                 '/user' => 'UserController@show',
                 '/resetpass' => 'ResetPassword@show',
                 '/setnewpass' => 'NewPassword@show',
-                '/user/[0-9]+' => 'UserController@edit',
-                '/product/[a-z]+/category/[a-z]+' => 'ProductController@show',
+                // '/product/[a-z]+/category/[a-z]+' => 'ProductController@show',
                 '/newad' => 'NewAd@show',
                 '/myads' => 'MyAds@show',
                 '/profilesettings' => 'ProfileSettings@show',
                 '/accountsettings' => 'AccountSettings@show',
-                '/ad/[0-9]+' => 'AdSolo@show'
+                '/ad/[0-9]+' => 'AdSolo@show',
+                '/delete/[0-9]+' => 'AdSolo@delete',
+                '/edit/[0-9]+' => 'AdSolo@edit'
             ],
             'post' => [
                 '/login' => 'NewLogin@get',
@@ -27,7 +28,8 @@ class Routes
                 '/setnewpass' => 'NewPassword@set',
                 '/newad' => 'NewAd@set',
                 '/profilesettings' => 'ProfileSettings@set',
-                '/accountsettings' => 'AccountSettings@set'
+                '/accountsettings' => 'AccountSettings@set',
+                '/edit/[0-9]+' => 'AdSolo@set'
                 ]
         ];
     }

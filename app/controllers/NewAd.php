@@ -23,7 +23,7 @@ class NewAd
             <input type="text" name="title" placeholder="Ad title here"><br><br>
 
             <label for="type">Tipo</label><br>
-            <select id="frutas" name="type">
+            <select name="type">
                 <option>Doméstico</option>
                 <option>Babá</option>
                 <option>Jurídico</option>

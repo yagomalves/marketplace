@@ -8,13 +8,13 @@ class MyAdsInfo extends Dbh
 
         if(!$stmt->execute(array($userId))) {
             $stmt = null;
-            header("Location: /user?error=stmtfailed");
+            header("Location: /myads?error=stmtfailed");
             exit();
         }
 
         if($stmt->rowCount() == 0) {
             $stmt = null;
-            header("Location: /user?error=adnotfound");
+            header("Location: /myads?error=adnotfound");
             exit();
         }
 
@@ -23,68 +23,27 @@ class MyAdsInfo extends Dbh
         return $adsInfo;
     }
 
-    // protected function GetSoloAdInfo($userId)
-    // {
-    //     $adsInfo = $this->GetAdInfo($userId);
-    //     if (!empty($adsInfo)) {
-    //         foreach ($adsInfo as $ad) {
-    //             $adId = $ad['ad_id'];
-    //             echo "<a href='/ad/{$adId}'>" . $ad['ad_title'] . "</a><br><br>";
-                
-    //             return $adId;
-    //         }
-    //     }
-        // $adId = $this->GetAdInfo($userId);
-        // dd($adId);
-
-        // $stmt = $this->connect()->prepare("SELECT * FROM ad WHERE ad_id = ?;");
-
-        // if(!$stmt->execute(array($adId))) {
-        //     $stmt = null;
-        //     header("Location: /user?error=stmtfailed");
-        //     exit();
-        // }
-
-        // if($stmt->rowCount() == 0) {
-        //     $stmt = null;
-        //     header("Location: /user?error=adnotfound");
-        //     exit();
-        // }
-
-        // $adId = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // }
-    // protected function GetSoloAdInfo($userId)
-    // {
-    //     $adId = $this->GetAdInfo($userId);
-    //     dd($adId);
-
-    //     $stmt = $this->connect()->prepare("SELECT * FROM ad WHERE ad_id = ?;");
-
-    //     if(!$stmt->execute(array($adId))) {
-    //         $stmt = null;
-    //         header("Location: /user?error=stmtfailed");
-    //         exit();
-    //     }
-
-    //     if($stmt->rowCount() == 0) {
-    //         $stmt = null;
-    //         header("Location: /user?error=adnotfound");
-    //         exit();
-    //     }
-
-    //     $adId = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //     return $adId;
-    // }
-
-    protected function SetNewAdInfo($profileAbout, $profileTitle, $profileText, $userId)
+    
+    protected function DeleteAdInfo($adId)
     {
-        $stmt = $this->connect()->prepare("UPDATE profiles SET profiles_about = ?, profiles_introtitle = ?, profiles_introtext = ? WHERE users_id = ?;");
+        $stmt = $this->connect()->prepare("DELETE FROM ad WHERE ad_id = ?;");
 
-        if(!$stmt->execute(array($profileAbout, $profileTitle, $profileText, $userId))) {
+        if(!$stmt->execute(array($adId))) {
             $stmt = null;
-            header("Location: /user?error=stmtfailed");
+            header("Location: /myads?error=stmtfailed");
+            exit();
+        }
+
+        $stmt = null;
+    }
+
+    protected function SetNewAdInfo($title, $type, $description, $price, $cep, $state, $city, $district, $adId)
+    {
+        $stmt = $this->connect()->prepare("UPDATE ad SET ad_title = ?, ad_type = ?, ad_description = ?, ad_price = ?, ad_cep = ?, ad_state = ?, ad_city = ?, ad_district = ? WHERE ad_id = ?;");
+
+        if(!$stmt->execute(array($title, $type, $description, $price, $cep, $state, $city, $district, $adId))) {
+            $stmt = null;
+            header("Location: /myads?error=stmtfailed");
             exit();
         }
 

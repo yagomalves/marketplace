@@ -67,9 +67,4 @@ class UserController
 
     }
 
-    public function edit()
-    {
-        echo 'USER EDIT';
-    }
-
 }
