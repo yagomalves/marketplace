@@ -9,24 +9,32 @@ Yago: Configurando as adaptações do chat para o nosso projeto.
 
 A fazer:
 
+Foram adicionados novos campos no SignUp do usuário, mas, ainda não foram implementados tratamentos de erro para o cadastro desses novos campos.
+
+
 Bugs:
 -telefone($phone) as vezes cadastra e atualiza numero predefinido.
 -usar DATE com formato Brasileiro
 -textareas salvando com espaços em branco
 -NAVBAR da página AdSolo está sem CSS
+-JS para exibir senha não estão funcionando
 
 Melhoras:
 -transformar $adId em uma constante na myadsinfo VIEW
 -adicionar tratamento de erros nos controllers (_controller)
 -inserir nome e telefone no anúncio
 -senha (visualizar e pedir senha forte)
+-diminuir quantidade de controllers
 
 Banner da Home
 
+Adicionar arquivo SQL no projeto
+
 Carrosel da Home 
 
-upload imagem de perfil
-upload imagens de anuncio
+imagem de perfil (upload ok)
+imagens de anuncio
+-definir uma imagem 'default'
 
 -média do USER
 -cometários de antigos contratantes no perfil visitado
@@ -48,6 +56,8 @@ resgatar data do anúncio em formato BR
 fazer pop-up de erro para query
 
 chat
+
+arquivo helpers/search.php a principio veio com o chat para procurar usuários. Arquivo ficou guardado para reaproveitar na pesquisa de anúncios. 
 
 --------------------------------------------------------------------------
 

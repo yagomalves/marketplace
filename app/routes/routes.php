@@ -19,7 +19,8 @@ class Routes
                 '/accountsettings' => 'AccountSettings@show',
                 '/ad/[0-9]+' => 'AdSolo@show',
                 '/delete/[0-9]+' => 'AdSolo@delete',
-                '/edit/[0-9]+' => 'AdSolo@edit'
+                '/edit/[0-9]+' => 'AdSolo@edit',
+                '/chat' => 'ChatController@show'
             ],
             'post' => [
                 '/login' => 'NewLogin@get',

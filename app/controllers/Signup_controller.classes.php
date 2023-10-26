@@ -9,8 +9,11 @@ class SignupController extends Signup
     private $lastName;
     private $phone;
     private $signupDate;
+    private $uniqueId;
+    private $status;
+    private $new_img_name;
 
-    public function __construct($password, $passwordRepeat, $email, $firstName, $lastName, $phone, $signupDate)
+    public function __construct($password, $passwordRepeat, $email, $firstName, $lastName, $phone, $signupDate, $uniqueId, $status, $new_img_name)
     {
         $this->password = $password; 
         $this->passwordRepeat = $passwordRepeat;
@@ -19,6 +22,9 @@ class SignupController extends Signup
         $this->lastName = $lastName;
         $this->phone = $phone;
         $this->signupDate = $signupDate;
+        $this->uniqueId = $uniqueId;
+        $this->status = $status;
+        $this->new_img_name = $new_img_name;
     }
 
     public function SignupUser()
@@ -40,7 +46,7 @@ class SignupController extends Signup
             exit();
         }
 
-    $this->setUser($this->password, $this->email, $this->firstName, $this->lastName, $this->phone, $this->signupDate);
+    $this->setUser($this->password, $this->email, $this->firstName, $this->lastName, $this->phone, $this->signupDate, $this->uniqueId, $this->status, $this->new_img_name);
 
     }
 

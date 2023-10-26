@@ -9,7 +9,6 @@ class HomeController
         include_once "../app/helpers/bootstrap.php";
         include_once "../app/helpers/navbar.php";
 ?>
-
 <section>
     <div>
         <?php
@@ -25,13 +24,17 @@ class HomeController
             <div class="mainForm">
                 <div class="mainFormFields">
                     <h2>Cadastrar</h2>
-                    <form action="/register" method="post">
+                    <form action="/register" enctype="multipart/form-data" method="post">
                         <input type="email" class='txt-camp' name="email" placeholder="E-mail">
-                        <input type="password" name="password" class='txt-camp' placeholder="Password">
-                        <input type="password" name="passwordRepeat" class='txt-camp' placeholder="Repeat password">
+                        <div class="field input"> <input type="password" name="password" class='txt-camp' placeholder="Password"><i class="fas fa-eye"></i></div>
+                        <div class="field input"><input type="password" name="passwordRepeat" class='txt-camp' placeholder="Repeat password"><i class="fas fa-eye"></i></div>
                         <input type="text" name="firstName" class='txt-camp' placeholder="First name">
                         <input type="text" name="lastName" class='txt-camp' placeholder="Last name">
                         <input type="tel" name="phone" class='txt-camp' maxlength="15" placeholder='(99) 99999-9999' onkeyup="handlePhone(event)" required>
+                        
+                        <div class="field image">
+                        <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg">
+                        </div>
 
                         <button type="submit" name="submit">Sign Up</button>
                     </form>
@@ -46,6 +49,7 @@ class HomeController
                     <form action="/login" method="post">
                         <input type="text" name="email" placeholder="Username">
                         <input type="password" name="password" placeholder="Password">
+                        <i class="fas fa-eye"></i>
                         <button type="submit" name="submit">Login</button>
                     </form>
                     <p><a href="/resetpass">Esqueceu a senha?</a></p>
@@ -68,7 +72,9 @@ class HomeController
 
 </section>
 
-<script src="./assets/js/ui/phoneMask.js"></script>
+    <script src="./assets/js/ui/phoneMask.js"></script>
+    <script src="./assets/js/chat/pass-show-hide.js"></script>
+    <script src="./assets/js/chat/signup.js"></script>
 
 <?php
 

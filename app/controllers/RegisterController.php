@@ -18,16 +18,36 @@ class RegisterController
             $firstName = htmlspecialchars($_POST["firstName"], ENT_QUOTES, 'UTF-8');
             $lastName = htmlspecialchars($_POST["lastName"], ENT_QUOTES, 'UTF-8');
             $phone = preg_replace("/[^0-9]/", "", htmlspecialchars($_POST["phone"], ENT_QUOTES, 'UTF-8'));
-            
             date_default_timezone_set("America/Sao_Paulo");
             $signupDate = date("Y-m-d H:i:s");
+            $uniqueId = rand(time(), 100000000);
+            $status = "Offline now";
+
+            if(isset($_FILES['image']))
+            {
+                $img_name = $_FILES['image']['name'];
+                $img_type = $_FILES['image']['type'];
+                $tmp_name = $_FILES['image']['tmp_name'];
+                $img_explode = explode('.',$img_name);
+                $img_ext = end($img_explode);
+                $extensions = ["jpeg", "png", "jpg"];
+                if(in_array($img_ext, $extensions) === true){
+                $types = ["image/jpeg", "image/jpg", "image/png"];
+                    if(in_array($img_type, $types) === true){
+                    $time = time();
+                    $new_img_name = $time.$img_name;
+                    move_uploaded_file($tmp_name,"images/".$new_img_name);
+                    }
+                }
+            }
+
 
             // INSTANCIAR SIGNUPCONTROLLER CLASS
             include '../app/classes/Dbh.classes.php';
             include '../app/classes/Signup.classes.php';
             include '../app/controllers/Signup_controller.classes.php';
 
-            $signUp = new SignupController($password, $passwordRepeat, $email, $firstName, $lastName, $phone, $signupDate);
+            $signUp = new SignupController($password, $passwordRepeat, $email, $firstName, $lastName, $phone, $signupDate, $uniqueId, $status, $new_img_name);
             
             // RUN ERRORS HANDLERS
             $signUp->SignupUser();
