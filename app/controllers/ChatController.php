@@ -5,6 +5,50 @@ use ChatInfoView;
 
 class ChatController
 {
+    public function fetch()
+    {
+        include_once "../app/helpers/protect.php";
+        include_once "../app/helpers/bootstrap.php";
+        include_once "../app/helpers/navbar.php";
+
+        include "../app/classes/Dbh.classes.php";
+        include "../app/classes/accountinfo.classes.php";
+        include "../app/views/chat_view.classes.php";
+
+        $userInfo = new ChatInfoView;
+?>        
+        <div class="wrapper">
+        <section class="users">
+        <header>
+            <div class="content">
+            <?php 
+                $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+                if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                }
+            ?>
+            <img src="php/images/<?php echo $row['img']; ?>" alt="">
+            <div class="details">
+                <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
+                <p><?php echo $row['status']; ?></p>
+            </div>
+            </div>
+            <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
+        </header>
+        <div class="search">
+            <span class="text">Select an user to start chat</span>
+            <input type="text" placeholder="Enter name to search...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="users-list">
+    
+        </div>
+        </section>
+    </div> 
+
+<?php
+    }
+    
     public function show()
     { 
         include_once "../app/helpers/protect.php";
@@ -22,7 +66,7 @@ class ChatController
     <section class="chat-area">
       <header>
 
-        <img src="public/assets/images/<?=$chatInfo->FetchStatus($_SESSION['userid'])?>" alt="">
+        <img src="public/assets/images/<?=$chatInfo->FetchImage($_SESSION['userid'])?>" alt="">
         <div class="details">
           <span><?= $_SESSION['user_first_name']. " " . $_SESSION['user_last_name'] ?></span>
           <p><?= $chatInfo->FetchStatus($_SESSION['userid']) ?></p>

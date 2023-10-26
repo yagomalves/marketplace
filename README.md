@@ -9,8 +9,6 @@ Yago: Configurando as adaptações do chat para o nosso projeto.
 
 A fazer:
 
-Foram adicionados novos campos no SignUp do usuário, mas, ainda não foram implementados tratamentos de erro para o cadastro desses novos campos.
-
 
 Bugs:
 -telefone($phone) as vezes cadastra e atualiza numero predefinido.
@@ -18,6 +16,8 @@ Bugs:
 -textareas salvando com espaços em branco
 -NAVBAR da página AdSolo está sem CSS
 -JS para exibir senha não estão funcionando
+-atualizar sessao quando alterar nome, sobrenome, etc etc
+
 
 Melhoras:
 -transformar $adId em uma constante na myadsinfo VIEW

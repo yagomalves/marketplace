@@ -14,5 +14,9 @@ class ChatInfoView extends AccountInfo
         echo $accountInfo[0]["status"];
     }
 
-
+    public function FetchUsers($userId)
+    {
+        $accountInfo = $this->GetAccountInfo($userId);
+        echo $accountInfo[0]["status"];
+    }
 }
